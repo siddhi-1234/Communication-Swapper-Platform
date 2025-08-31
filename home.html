@@ -1,91 +1,323 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Communication Swapper Platform</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwapX - Skill Swap Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <!-- bootstrap link -->
-         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-         <!-- css linking -->
-          <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+  <style>
+    /* Smooth floating animation for image */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    .float-animation {
+      animation: float 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-900 to-purple-900 text-white font-sans">
 
-        <!-- Navbar -->
-         <header class="header">
-            <a href="#" class="logo">
-           <img src="Images/logo.jpg" alt="SwapX Logo" />
-           <span>SwapX</span>
-         </a>
-   
-  <nav class="navbar">
-    <a href="home.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="howWork.html">How It Works</a>
-    <a href="community.html">Community</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Header Section -->
+  <header class="bg-gradient-to-r from-indigo-900 to-purple-900 fixed top-0 w-full z-50 shadow-md">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="Images/logo.jpg" alt="SwapX Logo" class="w-30 h-10">
+        <span class="text-2xl font-bold text-purple-300">Swap<span class="text-cyan-400">X</span></span>
+      </div>
+      <!-- Nav Links -->
+      <ul class="hidden md:flex space-x-8 text-white font-medium">
+        <li><a href="#" class="hover:text-purple-300 transition">Home</a></li>
+        <li><a href="#about" class="hover:text-purple-300 transition">About</a></li>
+        <li><a href="#how-it-works" class="hover:text-purple-300 transition">How It Works</a></li>
+        <li><a href="#testimonials" class="hover:text-purple-300 transition">Testimonial</a></li>
+        <li><a href="#contact" class="hover:text-purple-300 transition">Contact</a></li>
+      </ul>
+      <!-- Buttons -->
+      <div class="hidden md:flex gap-3">
+        <a href="#" class="px-5 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 transition shadow-lg">Sign Up</a>
+        <a href="#" class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition shadow-lg">Login</a>
+      </div>
+    </nav>
+  </header>
 
-  <div class="auth-buttons">
-    <button class="btn" ><i class="fa fa-user-plus"></i> Sign Up</button>
-    <button class="btn" ><i class="fa fa-sign-in-alt"></i> Login</button>
-  </div>
-        </header>
-        
-        <!-- Hero section -->
-       <section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Swap Skills, Not Money.</h1>
-    <p class="hero-subtitle">
-      Share What You Know. Learn What You Love<br/>
-      A community-driven platform to exchange skills and learn without spending a dime.
-    </p>
-    <div class="hero-buttons">
-      <a href="#signup" class="btn-primary">Join Now</a>
-      <a href="#about" class="btn-secondary">Learn More</a>
+  <!--  Hero Section -->
+  <section class="pt-28 md:pt-32 min-h-screen flex items-center">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <!-- Left Content -->
+      <div class="text-center md:text-left">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+          <span class="text-white">Connect.</span>
+          <span class="text-purple-400"> Learn.</span>
+          <span class="text-purple-300"> Swap Skills.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">
+          A community-driven platform where you can exchange your skills for what you want to learn. No money, just knowledge.
+        </p>
+        <!-- Buttons -->
+        <div class="flex justify-center md:justify-start gap-4">
+          <a href="#get-started" class="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:scale-105 hover:shadow-xl transition transform duration-300">Get Started</a>
+          <a href="#learn-more" class="px-6 py-3 rounded-lg border border-purple-400 text-purple-300 hover:bg-purple-600 hover:text-white hover:scale-105 transition transform duration-300">Learn More</a>
+        </div>
+      </div>
+      <!-- Right Image -->
+      <div class="flex justify-center">
+        <img src="Images/heroSection.png" alt="Skill Swap Illustration" class="w-96 md:w-[450px] rounded-xl shadow-lg float-animation hover:scale-105 transition duration-500">
+      </div>
     </div>
-  </div>
-  <div class="hero-image">
-    <img src="Images/heroSection.png" alt="Skill Swap Illustration" />
-  </div>
-       </section>
+  </section>
 
-       <!-- About Section -->
-        <!-- About Section -->
-<section class="about" id="about">
-  <div class="about-content">
-    <h2 class="about-title animate-title">What is SwapX?</h2>
-    <p class="about-description animate-desc">
-      SwapX helps people share knowledge by teaching what they know and learning what they want—all without spending money.
-    </p>
-    <div class="about-features">
-      <div class="feature-card animate-card">
-        <i class="icon">💡</i>
-        <h3>100% Free</h3>
-        <p>No hidden charges, just pure skill exchange.</p>
-      </div>
-      <div class="feature-card animate-card">
-        <i class="icon">🤝</i>
-        <h3>Community-Driven</h3>
-        <p>Connect with like-minded learners and teachers.</p>
-      </div>
-      <div class="feature-card animate-card">
-        <i class="icon">⚡</i>
-        <h3>Easy to Use</h3>
-        <p>Simple design for quick matchmaking and learning.</p>
-      </div>
-      <div class="feature-card animate-card">
-        <i class="icon">🔒</i>
-        <h3>Secure & Verified</h3>
-        <p>Trusted profiles and ratings to ensure safety.</p>
-      </div>
+  <!-- About section -->
+<section id="about" class="bg-gradient-to-br from-purple-900 to-indigo-900 text-white py-20">
+  <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+    
+    <!-- Left Image -->
+    <div class="flex justify-center md:justify-end">
+      <img src="Images/about.jpg" alt="About SwapX" class="w-90 md:w-[400px] rounded-xl shadow-lg hover:scale-105 transition duration-500">
+    </div>
+    
+    <!-- Right Content -->
+    <div class="text-center md:text-left">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">
+        About <span class="text-purple-400">SwapX</span>
+      </h2>
+      <p class="text-lg text-gray-300 mb-6">
+        SwapX is a community-driven platform where learning meets sharing. Whether you want to learn a new language, coding, music, or fitness, you can connect with others who have the skills you need—and share what you know in return.
+      </p>
+      <ul class="text-gray-300 space-y-3 mb-8">
+        <li class="flex items-center gap-2">
+          ✅ Exchange skills without spending money
+        </li>
+        <li class="flex items-center gap-2">
+          ✅ Build meaningful connections and learn together
+        </li>
+        <li class="flex items-center gap-2">
+          ✅ Grow your expertise and help others grow theirs
+        </li>
+      </ul>
+      <a href="#how-it-works" class="px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold hover:scale-105 hover:shadow-xl transition transform duration-300">
+        Learn How It Works
+      </a>
     </div>
   </div>
 </section>
 
+<!-- How It Works Section -->
+<section id="how-it-works" class="pt-28 md:pt-32 pb-20 bg-gradient-to-br from-indigo-900 to-purple-900 relative z-10">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    
+    <!-- Section Title -->
+    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white">
+      How It <span class="text-purple-400">Works</span>
+    </h2>
+    
+    <!-- Steps Grid -->
+    <div class="grid md:grid-cols-3 gap-10">
+      
+      <!-- Step 1 -->
+      <div class="bg-purple-800 rounded-2xl p-8 text-white shadow-xl transform transition-all duration-500 hover:scale-110 hover:shadow-purple-500/50">
+        <div class="bg-purple-600 w-16 h-16 flex items-center justify-center rounded-full mb-6 mx-auto text-2xl font-bold">
+          1
+        </div>
+        <h3 class="text-2xl font-semibold mb-4">Create Profile</h3>
+        <p class="text-gray-300">Sign up and showcase the skills you can offer and the ones you want to learn.</p>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="bg-purple-800 rounded-2xl p-8 text-white shadow-xl transform transition-all duration-500 hover:scale-110 hover:shadow-purple-500/50">
+        <div class="bg-purple-600 w-16 h-16 flex items-center justify-center rounded-full mb-6 mx-auto text-2xl font-bold">
+          2
+        </div>
+        <h3 class="text-2xl font-semibold mb-4">Find Matches</h3>
+        <p class="text-gray-300">Search and connect with users who need your skills and have what you want to learn.</p>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="bg-purple-800 rounded-2xl p-8 text-white shadow-xl transform transition-all duration-500 hover:scale-110 hover:shadow-purple-500/50">
+        <div class="bg-purple-600 w-16 h-16 flex items-center justify-center rounded-full mb-6 mx-auto text-2xl font-bold">
+          3
+        </div>
+        <h3 class="text-2xl font-semibold mb-4">Swap & Grow</h3>
+        <p class="text-gray-300">Book sessions, exchange knowledge, and build meaningful learning connections.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial Section -->
+<section id="testimonials" class="py-20 bg-gradient-to-br from-purple-900 to-indigo-900">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Section Title -->
+    <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white">
+      What Our <span class="text-purple-400">Users Say</span>
+    </h2>
+
+    <!-- Testimonial Grid -->
+    <div class="grid md:grid-cols-3 gap-10">
+      
+      <!-- Testimonial 1 -->
+      <div class="bg-purple-800 rounded-2xl p-8 text-white shadow-xl hover:scale-105 hover:shadow-purple-500/50 transition-transform duration-500" data-aos="fade-up" data-aos-delay="200">
+        <img src="Images/customer3.jpg" alt="User 1" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-purple-500">
+        <h3 class="text-xl font-semibold mb-2">Sarah Johnson</h3>
+        <p class="text-gray-300 mb-4">"SwapX helped me learn guitar while teaching coding! The best platform for skill sharing."</p>
+        <div class="flex justify-center text-yellow-400 text-xl">
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="bg-purple-800 rounded-2xl p-8 text-white shadow-xl hover:scale-105 hover:shadow-purple-500/50 transition-transform duration-500" data-aos="fade-up" data-aos-delay="200">
+        <img src="Images/customer1.jpg" alt="User 2" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-purple-500">
+        <h3 class="text-xl font-semibold mb-2">David Smith</h3>
+        <p class="text-gray-300 mb-4">"I exchanged my Spanish lessons for yoga sessions. Loved the experience!"</p>
+        <div class="flex justify-center text-yellow-400 text-xl">
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="bg-purple-800 rounded-2xl p-8 text-white shadow-xl hover:scale-105 hover:shadow-purple-500/50 transition-transform duration-500" data-aos="fade-up" data-aos-delay="300">
+        <img src="Images/customer4.jpg" alt="User 3" class="w-20 h-20 rounded-full mx-auto mb-4 border-4 border-purple-500">
+        <h3 class="text-xl font-semibold mb-2">Emily Brown</h3>
+        <p class="text-gray-300 mb-4">"No money, just knowledge. SwapX is the perfect platform for lifelong learners."</p>
+        <div class="flex justify-center text-yellow-400 text-xl">
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- contact section -->
+<section id="contact" class="py-20 bg-gradient-to-br from-indigo-900 to-purple-900">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    
+    <!-- Section Heading -->
+    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white" data-aos="fade-up">
+      Get in <span class="text-purple-400">Touch</span>
+    </h2>
+    <p class="text-gray-300 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Have questions or suggestions? We'd love to hear from you! Fill out the form below and we’ll get back to you.
+    </p>
+
+    <!-- Contact Form -->
+    <div class="bg-purple-800 rounded-2xl shadow-lg p-8 md:p-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+      <form class="space-y-6">
+        
+        <!-- Name -->
+        <div>
+          <input type="text" placeholder="Your Name" required
+            class="w-full px-4 py-3 rounded-lg bg-purple-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+        </div>
+        
+        <!-- Email -->
+        <div>
+          <input type="email" placeholder="Your Email" required
+            class="w-full px-4 py-3 rounded-lg bg-purple-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300">
+        </div>
+
+        <!-- Message -->
+        <div>
+          <textarea rows="5" placeholder="Your Message" required
+            class="w-full px-4 py-3 rounded-lg bg-purple-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg font-semibold text-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- footer section -->
+<footer class="bg-gradient-to-r from-indigo-900 to-purple-900 text-white py-12 mt-16">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+
+    <!-- Brand Info -->
+    <div>
+      <h2 class="text-2xl font-bold mb-4">Swap<span class="text-purple-400">X</span></h2>
+      <p class="text-gray-300">
+        A platform where knowledge meets collaboration. Swap your skills and learn without spending money.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li><a href="#about" class="hover:text-purple-400 transition">About</a></li>
+        <li><a href="#how-it-works" class="hover:text-purple-400 transition">How It Works</a></li>
+        <li><a href="#testimonials" class="hover:text-purple-400 transition">Testimonial</a></li>
+        <li><a href="#contact" class="hover:text-purple-400 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Resources</h3>
+      <ul class="space-y-2 text-gray-300">
+        <li><a href="#" class="hover:text-purple-400 transition">Help Center</a></li>
+        <li><a href="#" class="hover:text-purple-400 transition">Terms & Conditions</a></li>
+        <li><a href="#" class="hover:text-purple-400 transition">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Social & Newsletter -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Stay Connected</h3>
+      <div class="flex gap-4 mb-6">
+        <a href="#" class="hover:text-purple-400 transition"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-purple-400 transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-purple-400 transition"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="hover:text-purple-400 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+      <form id="newsletterForm" class="flex">
+        <input type="email" placeholder="Your Email" class="w-full px-4 py-2 rounded-l-lg bg-purple-700 text-white placeholder-gray-400 focus:outline-none">
+        <button type="submit" class="bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-r-lg hover:scale-105 transition">Subscribe</button>
+      </form>
+      <p id="newsletterStatus" class="text-sm mt-2"></p>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-purple-700 mt-10 pt-6 text-center text-gray-400 text-sm">
+    © 2025 SwapX. All Rights Reserved.
+  </div>
+</footer>
+
+<!--  FontAwesome for Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!--  Newsletter Script -->
+<script>
+  document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('newsletterStatus').innerText = "✅ Subscribed successfully!";
+    this.reset();
+  });
+</script>
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-    </body>
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
 </html>
